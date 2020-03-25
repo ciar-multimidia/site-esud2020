@@ -1,0 +1,32 @@
+$output-bourbon-deprecation-warnings: false !default;
+@import "padroes/reset";
+@import "padroes/predefinicoes";
+
+@import "padroes/formatacoes";
+@import "padroes/fancybox";
+@import "layout/canvas";
+
+
+/////// LAYOUT
+body, html {
+	overflow-x: hidden;
+	&.noscroll {overflow: hidden;}
+}
+
+body {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 17px;
+	line-height: 1.7;
+	color: $texto;
+	font-family: $fonte-padrao;
+	letter-spacing: 0.04;
+	position: relative;
+	min-height: 200vh;
+	letter-spacing: 0.09em;
+
+	@media (max-width: $smart-maior) { font-size: 15px; }
+	@media (max-width: $celular) { font-size: 14px; }
+}
+
+@import "layout/cabecalho";

@@ -1,0 +1,258 @@
+
+/****************************************
+ ----------------------------------------
+ * AREA UTIL *
+ ----------------------------------------
+ ****************************************/
+
+.container {
+    width: $container;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+    position: relative;
+
+    @media (max-width: $container) {
+        width: 100%;
+    }
+}
+
+#conteudo {
+	@include flex(space-between);
+
+
+}
+
+/****************************************
+ ----------------------------------------
+ * DEFINICOES PADRAO DE INICIO DE LAYOUT *
+ ----------------------------------------
+ ****************************************/
+// links
+a {
+	&:link, &:visited, &:active, &:focus {
+		outline: 0;
+		color: inherit;
+		@include transition(all 0.2s ease-in-out);
+		text-decoration:none;
+	}
+
+}
+b, strong {
+	font-weight: bold;
+	color: inherit;
+}
+u {
+	text-decoration: underline;
+}
+i, em {
+	color: inherit;
+	font-style: italic;
+}
+s, del {
+	text-decoration: line-through;
+}
+
+// paragrafos
+p, ul, ol, blockquote {
+	margin-bottom: 2rem;
+}
+
+small {
+	font-size: 80%;
+}
+
+center {
+	text-align: center;
+}
+
+// titulos
+h1, h2, h3, h4, h5 {
+	line-height: 1.2;
+	display: block;
+	color: inherit;
+    font-weight: bold;
+
+	a {
+		color: inherit !important;
+		text-decoration:none !important;
+	}
+}
+
+h1 {
+    font-size: 2.1em; 
+    @media (max-width: $smart-maior) {font-size: 2em; }
+}
+
+h2 { 
+	font-size: 1.8em; 
+	@media (max-width: $smart-maior) {font-size: 1.7em; }
+}
+h3 { 
+	font-size: 1.6em; 
+	@media (max-width: $smart-maior) {font-size: 1.4em; }
+}
+h4 { 
+	font-size: 1.4em;
+	@media (max-width: $smart-maior) {font-size: 1.3em; }
+}
+h5 { 
+	font-size: 1.1em; 
+	@media (max-width: $smart-maior) {font-size: 1.1em; }
+}
+h6 { font-size: 1em;}
+
+// quote
+blockquote {
+	font-size: 1em;
+	color: inherit;
+	padding: 20px;
+	font-style: italic;
+
+	p:last-of-type {margin-bottom: 0;}
+}
+
+
+// divisoria
+hr {
+	display: block; width: 100%;
+	margin: 2em auto; height: 22px;
+    border: 0; padding: 0;
+    position: relative;
+    overflow: inherit; text-align: center;
+}
+
+
+input, button, textarea {
+	@include appearance(none);
+	border: 0;
+	outline: 0;
+	font-family: inherit;
+	background: transparent;
+	font-size: inherit;
+}
+
+// caixas de texto e selects pra contato e afins
+input[type=text], input[type=tel], input[type=email], input[type=name], input[type=password], input[type=number], input[type=search], textarea {
+	width: 100%;
+	margin-top: 1rem;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	display: block;
+	padding: 0 15px;
+	line-height: 40px !important;
+	font-size: 15px;
+	color: $texto;
+	background: white;
+    border-radius: 0;
+    border: 2px solid ;
+    font-family: $fonte-padrao;
+	@include transition(background 0.3s ease-in-out);
+
+	&:focus {
+		outline:0;
+		background: white;
+	}
+}
+
+textarea {
+	height: 200px;
+	padding: 15px;
+	line-height: 1.65;
+	font-family: $fonte-padrao;
+}
+
+
+[type="radio"] {@include appearance(radio);}
+[type="checkbox"] {@include appearance(checkbox);}
+
+
+a.button, a.more-link, main input[type="submit"], main input[type="button"], main button[type="submit"], button.button, .button,
+a.btn, button.btn, .btn {
+	display: inline-block !important;
+	outline: 0 !important;
+	background: $texto !important;
+	color: white !important;
+	letter-spacing: 0.09em !important;
+	cursor: pointer !important;
+	padding: .5em 1em .7em !important;
+	position: relative !important;
+	font-size: 1em !important;
+	font-weight: 900 !important;
+	text-transform: lowercase !important;
+	white-space: nowrap !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+	font-family: $fonte-padrao !important;
+	box-shadow: none !important;
+	@include transition(background 0.3s ease-in-out);
+
+	&:hover {
+		text-decoration: none !important;
+		background: darken($texto,6%) !important;
+	}
+}
+
+// definicoes
+.clear {
+	clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+// alinhamentos
+.esq {text-align: left !important;}
+.dir, .has-text-align-right {text-align: right !important;}
+.center, .has-text-align-center {text-align: center !important;}
+
+
+// JANELA FANCYBOX 
+.janela {
+	max-width: $colmaior !important;
+	width: 100%;
+
+	h1 {text-align: center; margin-bottom: 35px;}
+
+	div, img {max-width: 100% !important}
+
+	@media (max-width: $smart-menor) {		
+		padding: 20px;
+	}
+}
+
+
+/****************************************
+ ----------------------------------------
+ * PADRAO ANTIGO WORDPRESS *
+ ----------------------------------------
+ ****************************************/
+
+.alignnone, a img.alignnone {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.aligncenter, a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.alignright, a img.alignright {
+    float:right;
+    margin-top: 5px;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.alignleft, a img.alignleft {
+    float: left;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 20px;
+}
