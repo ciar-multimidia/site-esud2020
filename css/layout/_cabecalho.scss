@@ -2,28 +2,19 @@
 	position: relative;
 
 	.grafismo {
-		width: 100%; height: 200px; position: absolute;
-		top: 38px;
+		width: 100%; max-height: 200px; position: absolute;
+		top: 38px; left: 50%; @include transform(translateX(-50%));
 
 		svg {
-			@include transform(rotate(180deg));
-			margin: 0 auto; display: block; height: 100%; text-align: center;
+			@include transform(rotate(180deg)); width: 100%;
+			margin: 0 auto; display: block; height: 100%; max-height: 200px; text-align: center;
 			path {fill: transparentize($rosa,0.8);}
 		}
 	}
 
-	&.home {
-		background: $rosa;
-
-		.grafismo {display: none;}
-		.area-cabecalho {
-			min-height: 86vh;
-		}
-	}
-
 	.area-cabecalho {
-		position: relative;
-		@include flex(flex-start);
+		position: relative; padding: 40px 0;
+		@include flex(center);
 
 		.imagem-fundo {
 			width: 100%; height: 100%; display: block;
@@ -33,11 +24,23 @@
 		}
 
 		.container {
-			@include flex(center);
-			@include flex-direction(column);
-			@include justify-content(center);
-			
-			.marca {
+		    @include display(flex);
+		    @include flex-wrap(wrap);
+		    @include flex-direction(column);
+		    @include justify-content(center);
+		}
+	}
+
+	// excessao para home
+	&.home {
+		background: $rosa;
+
+		.grafismo {display: none;}
+		.area-cabecalho { 
+			min-height: 86vh; padding: 0;
+
+			.container .marca {
+				margin: 2em 0;
 				width: 40%; height: auto;
 
 				h1 {
@@ -46,6 +49,26 @@
 					text-transform: uppercase;
 					text-align: center; line-height: inherit;
 					font-weight: 500; 
+				}
+			}
+
+			@media (max-width: $tablet) {
+				.container .marca {
+					width: 50%;
+
+					h1 {font-size: .7em}
+				}
+			}
+
+			@media (max-width: $smart-maior) {
+				min-height: initial;
+
+				.imagem-fundo {opacity: .4}
+				.container .marca { 
+					width: 100%; padding-top: 3em;
+
+					img { margin: 0 auto; display: block; width: 350px; max-width: 80%;  }
+					h1 { padding: 0 1em; font-size: .8em}
 				}
 			}
 		}

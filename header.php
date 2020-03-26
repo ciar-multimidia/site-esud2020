@@ -20,18 +20,26 @@ echo '<main>';
 		echo '<nav class="container" id="menu">'; ciar_menu('primary'); echo '</nav>';
 
 
+		echo '<div class="area-cabecalho">';
 		if (is_front_page()) {
-			echo '<div class="area-cabecalho">';
-				echo '<div class="imagem-fundo" style="background-image:url('.get_template_directory_uri().'/img/fundo-001.png);"></div>';
+			
+			echo '<div class="imagem-fundo" style="background-image:url('.get_template_directory_uri().'/img/fundo-001.png);"></div>';
 
-				echo '<div class="container">';
-					echo '<div class="marca">';
-						echo '<img src="'.get_template_directory_uri().'/img/marca.svg" alt="Marca do ESUD 2020">';
-						echo '<h1>Caminhos para a educação em rede:<br>Políticas Públicas e Gestão Institucional</h1>';
-					echo '</div>';
+			echo '<div class="container">';
+				echo '<div class="marca">';
+					echo '<img src="'.get_template_directory_uri().'/img/marca.svg" alt="Marca do ESUD 2020">';
+					echo '<h1>Caminhos para a educação em rede:<br>Políticas Públicas e Gestão Institucional</h1>';
 				echo '</div>';
 			echo '</div>';
+			
+		} else {
+
+			echo '<div class="container">';
+				the_title();
+			echo '</div>';
+
 		}
+		echo '</div>';
 
 	echo '</header>';
 
