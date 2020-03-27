@@ -87,6 +87,7 @@ function ciar_load_styles() {
 
     // scripts
     wp_enqueue_script( 'fancybox', $urlCDN . '/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', array('jquery-core'), '', true);
+    wp_enqueue_script( 'scripts', $urltheme . '/js/scripts.js', array('jquery-core'), '', true);
 } 
 
 
@@ -151,7 +152,7 @@ function ciar_menu($local) {
     'fallback_cb' => 'wp_page_menu', 
     'link_before' => '',
     'link_after' => '',
-    'items_wrap' => '<ul>%3$s</ul>', 
+    'items_wrap' => '<ul id="lista-menu">%3$s</ul>', 
     'depth' => 0, 
     'walker' => '' 
   )); 

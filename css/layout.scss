@@ -4,7 +4,6 @@ $output-bourbon-deprecation-warnings: false !default;
 
 @import "padroes/formatacoes";
 @import "padroes/fancybox";
-@import "layout/canvas";
 
 
 /////// LAYOUT
@@ -29,4 +28,5 @@ body {
 	@media (max-width: $celular) { font-size: 14px; }
 }
 
+@import "layout/menu";
 @import "layout/cabecalho";

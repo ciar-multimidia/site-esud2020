@@ -1,0 +1,119 @@
+#menu {
+	background: $rosa;
+	text-align: center;
+	font-size: .8em;
+	text-transform: uppercase;
+	position: fixed; left: 50%;
+	@include transform(translateX(-50%)); z-index: 2;
+	@include flex(space-between);
+	@include align-items(center);
+
+	&:before {
+		background: $rosa; content: '';
+		@include expandefundo;
+	}
+	&:after {
+		content: ""; height: 1px; background: white;
+		position: absolute; bottom: 0;  width: 105vw;
+		left: 50%; @include transform(translateX(-50%));
+	}
+
+	& > * {position: relative; color: white;}
+
+	h1 { line-height: 1; font-size: 1.95em; }
+
+	button {
+		background: transparent; text-transform: uppercase; display: none;
+		color: white; padding: 0 20px; line-height: calc(4em - 16px); cursor: pointer;
+		font-size: inherit; font-weight: bold; border-radius: 8px; letter-spacing: 0.09em; margin: 8px 0;
+
+		&:hover, &:focus {
+			background: white; color: $rosa; 
+		}
+
+		@media (max-width: 800px) {
+			display: block;
+		}
+	}
+
+	ul {
+		margin: 0; 
+
+		li {
+			display: inline-block;
+			margin: 0;
+
+			a {
+				position: relative;
+				color: white;
+				display: block;
+				padding: 0 1em;
+				line-height: 4;
+				font-weight: 500;
+
+				&:before, &:after {
+					width: 0; height: 3px; display: block; opacity: 0; position: absolute;
+					left: 50%; content: ""; background: white;
+					@include transition(width .3s ease-in-out, opacity .3s ease-in-out);
+				}
+
+				&:before { top: 0; @include transform(translateX(-50%));}
+				&:after { bottom: 0; @include transform(translateX(-50%)); }
+
+			}
+
+			&.current_page_item a, &.current-menu-item a, a:hover {
+				&:before, &:after {
+					width: 100%; opacity: 1;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 800px) {
+		ul {
+			width: 100%; display: none;
+			&.mostrar {display: block;}
+
+			li { 
+				width: 100%; border-top: 1px solid white; 
+
+				a {
+					&:before, &:after {display: none;}
+					&:hover, &:focus {
+						background: darken($rosa,5%);
+					}
+				}
+			}
+		}
+	}
+
+	#cabecalho.home & {
+		@include justify-content(center);
+		h1 {
+			width: 0; overflow: hidden; opacity: 0; 
+			@include transition(opacity .5s ease-in-out);
+		}
+
+		@media (max-width: 800px) {
+			@include justify-content(space-between);
+
+			h1.mostrar { width: initial; opacity: 1; }
+		}
+	}
+
+	////////////////// VERSAO AZUL
+	&.versao-azul {
+		background: $azul-marinho;
+
+		&:before { background: $azul-marinho; }
+
+		button:hover, button:focus { color: $azul-marinho; }
+
+		@media (max-width: 800px) {
+			ul li a {
+				&:hover, &:focus { background: darken($azul-marinho,5%); }
+			}
+		}
+	}
+}

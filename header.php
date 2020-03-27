@@ -9,15 +9,17 @@ get_template_part('inc/metatags');
 echo '</head>';
 echo '<body class="'.join(' ',get_body_class()).'">';
 
-// get_template_part('inc/menu','mobile');
-
 echo '<main>';
 
 
 	echo '<header id="cabecalho" class="'.(is_front_page() ? 'home' : '').'">';
 		get_template_part('img/grafismo');
 
-		echo '<nav class="container" id="menu">'; ciar_menu('primary'); echo '</nav>';
+		echo '<nav class="container" id="menu" role="navigation">'; 
+			echo '<h1 id="nome-evento"><a href="'.get_bloginfo('url').'">ESUD 2020</a></h1>';
+			echo '<button id="botao-menu" aria-expanded="false">&#9776; Navegação</button>';
+			ciar_menu('primary'); 
+		echo '</nav>';
 
 
 		echo '<div class="area-cabecalho">';
@@ -35,7 +37,7 @@ echo '<main>';
 		} else {
 
 			echo '<div class="container">';
-				the_title();
+				echo '<h1>Título da página</h1>';
 			echo '</div>';
 
 		}
@@ -45,3 +47,5 @@ echo '<main>';
 
 
 	echo '<section id="conteudo" class="container">';
+
+
