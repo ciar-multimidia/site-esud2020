@@ -21,7 +21,7 @@ body {
 	font-family: $fonte-padrao;
 	letter-spacing: 0.04;
 	position: relative;
-	min-height: 200vh;
+	// min-height: 200vh;
 	letter-spacing: 0.09em;
 
 	@media (max-width: $smart-maior) { font-size: 15px; }
@@ -30,3 +30,7 @@ body {
 
 @import "layout/menu";
 @import "layout/cabecalho";
+@import "layout/componentes";
+@import "layout/home";
+
+@import "layout/artigos";

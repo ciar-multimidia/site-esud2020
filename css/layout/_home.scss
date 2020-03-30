@@ -1,0 +1,102 @@
+// ========================================//
+// CONFIG BASICA SESSOES DA HOME
+// ========================================// 
+.sessao-home {
+	padding-top: 8em;
+	padding-bottom: 7em;
+	position: relative;
+	@include flex(space-between);
+
+	.imagem-fundo {
+		width: 100%; height: 100%; display: block;
+		background-size: auto 80%; position: absolute; bottom: 0; right: 0;
+		background-repeat: no-repeat;
+
+		&.esq {background-position: left bottom;}
+		&.dir {background-position: right bottom;}
+	}
+
+	&:before { content: ''; @include expandefundo; }
+
+	& > * {position: relative;}
+
+	.titulo {
+		width: 100%;
+		text-transform: uppercase;
+		padding-bottom: 1em;
+	}
+
+	.col {
+		width: calc(50% - 1em);
+	}
+}
+
+
+// ========================================//
+// SESSOES DA HOME
+// ========================================//
+////////////// O EVENTO 
+#o-evento {
+	background: $cinza;
+	
+	&:before {background: $cinza;}
+	&:after {
+		content: "\25CB\0020\25CB\0020\25CB"; position: absolute;
+		top: 30px; color: $turquesa; left: 10px; font-weight: bold;
+		font-size: 1.6em;
+	}
+
+	.infos {
+		color: $turquesa;
+
+		
+		h2 {
+			text-transform: uppercase;
+			font-size: 2.1em;
+
+			span {
+				display: block; padding: 1em 0;
+				position: relative;
+
+				&:before {
+					content: ""; width: 20px; height: 6px; background: $rosa;
+					display: block; top: 0; left: 0; position: absolute;
+				}
+
+				&:first-of-type {
+					padding-top: 0;
+					&:before {display: none;}
+				}
+
+				&:last-of-type {padding-bottom: 0}
+			}	
+		}
+	}
+}
+
+
+////////////// A CIDADE
+#a-cidade {
+	width: 100%;
+	background: $turquesa;
+	color: white;
+	
+	.linha { 
+		width: 100%; max-width: $container;
+		top: 30px; left: 50%; position: absolute;
+		@include transform(translateX(-50%));
+	}
+}
+
+
+
+////////////// INSCRICOES
+#inscricoes {
+	background: $azul-escuro; color: white;
+	@include justify-content(flex-end); min-height: 80vh;
+
+	&:before {
+		background: $azul-escuro url('../img/grafismo2.svg') no-repeat left bottom / auto 90%;
+	}
+
+}

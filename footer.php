@@ -1,4 +1,4 @@
-<?php  echo '</section>'; // fim container
+<?php  
 
 echo '<footer id="rodape">';
 

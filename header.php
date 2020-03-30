@@ -5,6 +5,7 @@ echo '<head>';
 	echo '<title>'; 
 		echo wp_title( '|', true, 'right' ); echo get_bloginfo('name');
 	echo '</title>';
+echo '<meta name="theme-color" content="#00568B" />';	
 get_template_part('inc/metatags');
 echo '</head>';
 echo '<body class="'.join(' ',get_body_class()).'">';
@@ -13,7 +14,7 @@ echo '<main>';
 
 
 	echo '<header id="cabecalho" class="'.(is_front_page() ? 'home' : '').'">';
-		get_template_part('img/grafismo');
+		get_template_part('img/grafismo1');
 
 		echo '<nav class="container" id="menu" role="navigation">'; 
 			echo '<h1 id="nome-evento"><a href="'.get_bloginfo('url').'">ESUD 2020</a></h1>';
@@ -44,8 +45,4 @@ echo '<main>';
 		echo '</div>';
 
 	echo '</header>';
-
-
-	echo '<section id="conteudo" class="container">';
-
 
