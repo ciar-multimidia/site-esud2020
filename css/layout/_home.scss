@@ -29,6 +29,19 @@
 	.col {
 		width: calc(50% - 1em);
 	}
+
+	@media (max-width: $smart-maior) {
+		padding-top: 4em;
+		padding-bottom: 4em;
+
+		.imagem-fundo {
+			opacity: .4;
+			background-size: 95% auto; 
+		}
+
+		.titulo, .wrap-link {text-align: center;}
+		.col {width: 100%}
+	}
 }
 
 
@@ -46,6 +59,8 @@
 		font-size: 1.6em;
 	}
 
+	.titulo {color: $rosa;}
+
 	.infos {
 		color: $turquesa;
 
@@ -54,13 +69,17 @@
 			text-transform: uppercase;
 			font-size: 2.1em;
 
+			@media (max-width: $smart-menor) {font-size: 1.7em;}
+
 			span {
 				display: block; padding: 1em 0;
 				position: relative;
 
+				span {display: inline-block;}
+
 				&:before {
 					content: ""; width: 20px; height: 6px; background: $rosa;
-					display: block; top: 0; left: 0; position: absolute;
+					display: block; top: 0; left: 0; position: absolute; border-radius: 3px;
 				}
 
 				&:first-of-type {
@@ -72,6 +91,45 @@
 			}	
 		}
 	}
+
+	@media (max-width: $smart-maior) {
+		&:after {top: 15px; left: 50%; @include transform(translateX(-50%)); }
+
+		.sobre {@include order(2);}
+		.infos {
+			@include order(1);
+
+			h2 {
+				width: 100%; margin-bottom: 1em;
+				text-align: center;
+
+				span {
+					display: inline-block; padding: 0; padding-left: .5em !important;
+					
+					&:before {
+						margin-right: .5em; width: 15px; 
+						position: relative; display: inline-block; top: initial; left: initial;
+					}
+
+					&:nth-of-type(1), &:nth-of-type(3) {
+						padding: 0 !important;
+						&:before {display: none;}
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $celular) {
+		&:after { font-size: 1em }
+
+		.infos h2 {
+			span.abrevia {display: none;}
+			span:before {
+				width: 6px; 
+			}
+		}
+	}
 }
 
 
@@ -80,11 +138,16 @@
 	width: 100%;
 	background: $turquesa;
 	color: white;
+	text-shadow: 1px 1px 0 transparentize($turquesa,0.5);
 	
 	.linha { 
-		width: 100%; max-width: $container;
+		width: 100%; max-width: $container; padding: 0 10px;
 		top: 30px; left: 50%; position: absolute;
 		@include transform(translateX(-50%));
+	}
+
+	@media (max-width: $smart-maior) {
+		.linha {padding: 0 20px;}
 	}
 }
 
@@ -93,10 +156,46 @@
 ////////////// INSCRICOES
 #inscricoes {
 	background: $azul-escuro; color: white;
-	@include justify-content(flex-end); min-height: 80vh;
+	@include justify-content(flex-end); min-height: 450px;
+	text-shadow: 1px 1px 0 transparentize($azul-escuro,0.5);
 
 	&:before {
 		background: $azul-escuro url('../img/grafismo2.svg') no-repeat left bottom / auto 90%;
 	}
 
+	@media (max-width: $smart-maior) {
+		min-height: initial;
+
+		&:before {background-size: 95% auto; }
+	}
+}
+
+
+
+////////////// NOTICIAS
+#noticias {
+
+	.wrap-mais-noticias {
+		width: 100%;
+		@include flex(space-between);
+		@include align-items(center);
+		padding-bottom: 1.6em;
+
+		.titulo {width: auto; color: $turquesa; padding-bottom: 0;}
+	}
+
+	&:after {
+		content: "\25CB\0020\25CB\0020\25CB"; position: absolute;
+		top: 30px; color: $rosa; left: 10px; font-weight: bold;
+		font-size: 1.6em;
+	}
+
+	@media (max-width: $smart-maior) {
+		&:after {top: 15px; left: 50%; @include transform(translateX(-50%)); }
+	}
+
+
+	@media (max-width: $celular) {
+		&:after { font-size: 1em }
+	}	
 }

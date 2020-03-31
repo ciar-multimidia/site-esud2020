@@ -34,7 +34,7 @@ a.saiba-mais {
 
 	
 	// mousover
-	&:hover {
+	&:hover, &:focus {
 		padding-right: 24px;
 
 		&:before {
@@ -72,7 +72,7 @@ a.saiba-mais {
 
 
 // ========================================//
-// BOTAO SAIBA MAIS
+// LISTA DE LINKS IMPORTANTES
 // ======================================= //
 ul.links-importantes {
 	li {
@@ -96,5 +96,52 @@ ul.links-importantes {
 		// &:hover {
 		// 	&:before { content: "\00BB"; font-size: 1.7em; font-weight: normal}
 		// }
+	}
+}
+
+
+
+// ========================================//
+// LISTA DE NOTICIAS
+// ======================================= //
+ul.lista-noticias {
+	width: 100%;
+
+	li {
+		width: 100%; padding: 1.6em 0; position: relative;
+		border-bottom: 3px solid $cinza;
+
+		.titulo-noticia {
+			width: 100%; margin-bottom: .8em;
+			@include flex(space-between);
+			@include align-items(flex-end);
+			@include flex-wrap(nowrap);
+
+			h3 { @include flex-grow(1); }
+			time { 
+				font-size: .7em; font-weight: bold;
+				text-transform: uppercase; color: darken($cinza,40%);
+				@include flex-shrink(0); margin-left: 3em;
+			}
+
+
+			@media (max-width: $celular) {
+				@include flex-wrap(wrap);
+
+				h3 {width: 100%;}
+				time {margin-left: 0;}
+			}
+		}
+
+		article { 
+			max-width: $smart-maior; width: 100%; 
+			p {margin-bottom: 0;}
+		}
+
+		a.link { @include blocoabsoluto; }
+
+		&:hover, &:focus{
+			 article { text-decoration: underline; }
+		}
 	}
 }
