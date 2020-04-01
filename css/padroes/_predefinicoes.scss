@@ -12,6 +12,8 @@ $amarelo: #FFE187;
 
 /////// FAMILIAS VARIAVEIS
 $fonte-padrao: 'Mazzard M', sans-serif;
+$fonte-icone: 'Font Awesome 5 Free';
+$fonte-marca: 'Font Awesome 5 Brands';
 
 
 /////// MEDIA QUERIES e TAMANHOS
@@ -27,4 +29,5 @@ $colmenor: 300px;
 /////// IMPORTACOES
 @import "../bourbon/bourbon";
 @import "../padroes/mixins";
+@import "../padroes/icones";
 @import "../padroes/fontface";

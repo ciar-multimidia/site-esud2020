@@ -5,8 +5,7 @@
 function ciar_menu_adm(){
     global $menu, $submenu;
 
-    $menu[3][0] = 'AFC Painel';
-    $submenu['afc-opcoes'][0][0] = 'Configurações';  
+    $menu[5][0] = 'Notícias';
 
   
     unset($submenu['themes.php'][6]); // remove customize
@@ -21,7 +20,7 @@ function ciar_menu_adm(){
     }
 
 }
-// add_action( 'admin_menu', 'ciar_menu_adm', 999 );
+add_action( 'admin_menu', 'ciar_menu_adm', 999 );
 
 
 // ========================================//

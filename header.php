@@ -38,7 +38,13 @@ echo '<main>';
 		} else {
 
 			echo '<div class="container">';
-				echo '<h1>Título da página</h1>';
+				echo '<h1 class="titulo-pagina">';
+					if (is_home() && ! is_front_page()) {
+						echo 'Notícias';
+					} else {
+						echo get_the_title();
+					}
+				echo '</h1>';
 			echo '</div>';
 
 		}

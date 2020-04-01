@@ -151,7 +151,7 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 	color: $texto;
 	background: white;
     border-radius: 0;
-    border: 2px solid ;
+    border: 1px solid $rosa;
     font-family: $fonte-padrao;
 	@include transition(background 0.3s ease-in-out);
 
@@ -164,7 +164,7 @@ input[type=text], input[type=tel], input[type=email], input[type=name], input[ty
 textarea {
 	height: 200px;
 	padding: 15px;
-	line-height: 1.65;
+	line-height: 1.65 !important;
 	font-family: $fonte-padrao;
 }
 

@@ -35,18 +35,5 @@ body {
 
 @import "layout/artigos";
 
+@import "layout/rodape";
 
-#rodape-site {
-	background: $rosa; color: white;
-	padding-top: 4em; padding-bottom: 4em;
-
-	&:before {content: ''; @include expandefundo; background: $rosa;}
-
-	& > * {position: relative;}
-
-	.linha { 
-		width: 100%; max-width: $container; padding: 0 10px;
-		top: 30px; left: 50%; position: absolute;
-		@include transform(translateX(-50%));
-	}
-}

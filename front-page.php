@@ -82,10 +82,11 @@ echo '</session>';
 // NOTICIAS
 // ======================================= //
 echo '<session class="sessao-home container" id="noticias">';
+	$pagNoticias = get_permalink(get_option('page_for_posts'));
 
 	echo '<div class="wrap-mais-noticias">';
 		echo '<h1 class="titulo">Notícias</h1>';
-		echo '<a href="#" class="saiba-mais">ver todas</a>';
+		echo '<a href="'.$pagNoticias.'" class="saiba-mais">ver todas</a>';
 	echo '</div>';
 
 	get_template_part('inc/loop-lista-noticias');

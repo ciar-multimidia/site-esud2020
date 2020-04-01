@@ -1,0 +1,119 @@
+
+#rodape-site {
+	background: $rosa; color: white;
+	padding-top: 6em; padding-bottom: 4em;
+
+	&:before {content: ''; @include expandefundo; background: $rosa;}
+
+	& > * {position: relative;}
+
+	.linha { 
+		width: 100%; max-width: $container; padding: 0 10px;
+		top: 30px; left: 50%; position: absolute;
+		@include transform(translateX(-50%));
+	}
+
+	h1, h2 { text-transform: uppercase; font-size: 1em; margin-bottom: 1em; width: 100%;}
+
+	.marcas {
+		width: 100%; margin-bottom: 4em;
+		@include flex(flex-start);
+		@include align-items(center);
+
+		img {margin-right: 2em; max-width: 180px; margin-bottom: 20px;}
+
+		@media (max-width: $smart-menor) {
+			img {
+				max-width: 110px;
+			}
+		}
+	}
+
+
+	h2 {margin-bottom: 0;}
+	p {
+		font-size: .85em; letter-spacing: 0.04em; margin-bottom: 0;
+		a {text-decoration: underline;}
+	}
+
+	
+	// form contato
+	.wpcf7-form {
+		width: 100%;
+		@include flex(space-between);
+
+		.campos {
+			width: 33%;
+
+			label {
+				display: block; position: relative;
+
+				i {
+					position: absolute; top: 12px; left: 11px;
+					color: $rosa;
+				}
+
+				span input {padding-left: 40px;}
+			}
+		}
+
+		.mensagem {
+			width: 65%; height: 100%; position: relative; margin-top: 1rem;
+
+
+			span.wpcf7-form-control-wrap {
+				width: 100%; height: 217px; display: block; 
+				background: white; border: 1px solid $rosa;
+
+				textarea {
+					height: 180px;
+					background: transparent;
+					border:0; margin: 0; resize: none
+				}
+			}
+
+			input.wpcf7-submit {
+				position: absolute !important;
+				bottom: -3px; right: 0; @include transform(translateY(-100%));
+				background: $rosa !important;
+				text-transform: uppercase !important; font-size: .8em !important;
+
+				&:hover {
+					background: darken($rosa,5%) !important;
+				}
+			}
+		}
+
+		@media (max-width: $smart-menor) {
+			.campos, .mensagem {width: 100%}
+			
+		}
+	}
+
+	.midias-e-creditos {
+		width: 100%; margin-top: 2em;
+		@include flex(space-between);
+
+		.midias {
+			width: 33%; 
+
+			a {
+				display: inline-block;
+				font-size: 35px;
+				margin-right: .8em;
+			}
+		}
+
+		.creditos {
+			width: 65%;
+
+			img {max-width: 140px;}
+		}
+
+		@media (max-width: $smart-menor) {
+			.midias, .creditos {width: 50%;}
+			.midias a {font-size: 28px}
+			.creditos img {max-width: 100px;}
+		}
+	}
+}

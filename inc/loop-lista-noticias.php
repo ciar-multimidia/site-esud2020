@@ -1,41 +1,29 @@
 <?php
-	echo '<ul class="lista-noticias">';
-		echo '<li>';
-			echo '<header class="titulo-noticia">';
-				echo '<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>';
-				echo '<time>Em 03/09/2020</time>';
-			echo '</header>';
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$my_query = new WP_Query( array('post_type' => 'post', 'paged' => $paged) ); 
 
-			echo '<article>';
-				echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt...</p>';
-			echo '</article>';
+echo '<ul class="lista-noticias">';
+	if ( $my_query->have_posts()) {
+		while ( $my_query->have_posts() ) : $my_query->the_post();
 
-			echo '<a href="#" class="link"></a>';
-		echo '</li>';
+		$idpost = get_the_ID();
+		$permalink = get_the_permalink();
+		$titulo = get_the_title();
+		$resumo = trim(strip_tags(mb_substr(get_the_excerpt(), 0,340)));
 
-		echo '<li>';
-			echo '<header class="titulo-noticia">';
-				echo '<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>';
-				echo '<time>Em 03/09/2020</time>';
-			echo '</header>';
+			echo '<li id="post-'.$idpost.'"'; post_class(); echo '>';
+				echo '<header class="titulo-noticia">';
+					echo '<h3>'.$titulo.'</h3>';
+					echo '<time datetime="'.get_the_time('Y-m-d h:i').'" itemprop="datePublished">Em '.get_the_time('d/m/Y').'</time>';
+				echo '</header>';
 
-			echo '<article>';
-				echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt...</p>';
-			echo '</article>';
+				echo '<article>';
+					echo '<p>'.$resumo.'</p>';
+				echo '</article>';
 
-			echo '<a href="#" class="link"></a>';
-		echo '</li>';
+				echo '<a href="'.$permalink.'" class="link"></a>';
+			echo '</li>';
 
-		echo '<li>';
-			echo '<header class="titulo-noticia">';
-				echo '<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>';
-				echo '<time>Em 03/09/2020</time>';
-			echo '</header>';
-
-			echo '<article>';
-				echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt...</p>';
-			echo '</article>';
-
-			echo '<a href="#" class="link"></a>';
-		echo '</li>';
-	echo '</ul>';
+		endwhile;
+	} wp_reset_query(); 
+echo '</ul>';
