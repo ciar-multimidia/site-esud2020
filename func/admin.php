@@ -16,7 +16,7 @@ function ciar_menu_adm(){
     // RESTRINGINDO ITENS DO MENU LATERAL PARA LIMPAR AREA
     $current_user = wp_get_current_user();
     if ($current_user->user_login !== 'afcwebdesign') {
-        remove_menu_page( 'edit.php?post_type=acf-field-group' );
+        // remove_menu_page( 'edit.php?post_type=acf-field-group' );
     }
 
 }

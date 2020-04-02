@@ -25,8 +25,21 @@ echo '<main>';
 
 		echo '<div class="area-cabecalho">';
 		if (is_front_page()) {
-			
-			echo '<div class="imagem-fundo" style="background-image:url('.get_template_directory_uri().'/img/fundo-001.png);"></div>';
+
+			echo '<div class="imagem-fundo" style="background-image:url(';
+				$fundo = get_field('fundo_cabecalho');
+				if( $fundo ) {
+									
+					$getRandom = $fundo[ array_rand( $fundo ) ];
+					$imgAleatoria = $getRandom['imagem' ];
+
+					echo $imgAleatoria['sizes']['large'];
+
+				} else {
+					echo get_template_directory_uri().'/img/fundo-001.png';
+				}
+			echo ');"></div>';
+
 
 			echo '<div class="container">';
 				echo '<div class="marca">';
