@@ -12,6 +12,7 @@
 		background: $rosa; content: '';
 		@include expandefundo;
 	}
+
 	&:after {
 		content: ""; height: 1px; background: white;
 		position: absolute; bottom: 0;  width: 105vw;
@@ -102,12 +103,22 @@
 		}
 	}
 
-	////////////////// VERSAO AZUL
-	&.versao-azul {
+
+	////////////////// OUTRAS CORES
+	body.bg-turquesa & {
+		background: $turquesa;
+		&:before {background: $turquesa;}
+		button:hover, button:focus { color: $turquesa; }
+
+		@media (max-width: 800px) {
+			ul li a {
+				&:hover, &:focus { background: darken($turquesa,5%); }
+			}
+		}
+	}
+	body.bg-azul & {
 		background: $azul-marinho;
-
-		&:before { background: $azul-marinho; }
-
+		&:before {background: $azul-marinho;}
 		button:hover, button:focus { color: $azul-marinho; }
 
 		@media (max-width: 800px) {

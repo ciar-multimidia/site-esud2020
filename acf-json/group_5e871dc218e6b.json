@@ -1,0 +1,47 @@
+{
+    "key": "group_5e871dc218e6b",
+    "title": "Página especial",
+    "fields": [
+        {
+            "key": "field_5e871dd15eb9d",
+            "label": "Cor de fundo da página",
+            "name": "pgespecial",
+            "type": "button_group",
+            "instructions": "Selecione a cor de fundo desta página",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-fundopg",
+                "id": ""
+            },
+            "choices": {
+                "bg-rosa": "Marsala",
+                "bg-turquesa": "Turquesa",
+                "bg-azul": "Azul Marinho"
+            },
+            "allow_null": 1,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1585913462
+}

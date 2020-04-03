@@ -46,6 +46,9 @@ add_action( 'wp_before_admin_bar_render', 'ciar_remove_customize' );
 // ========================================// 
 function ciar_admin_css() {
     echo '<style>';
+      echo '.field-fundopg .acf-input .acf-button-group label.selected:nth-of-type(1) {background: #C94A68 !important; border-color: #C94A68 !important; color: white;}';
+      echo '.field-fundopg .acf-input .acf-button-group label.selected:nth-of-type(2) {background: #38A9AD !important; border-color: #38A9AD !important; color: white;}';
+      echo '.field-fundopg .acf-input .acf-button-group label.selected:nth-of-type(3) {background: #00568B !important; border-color: #00568B !important; color: white;}';
     echo '</style>';
 }
 add_action( 'admin_head', 'ciar_admin_css' );

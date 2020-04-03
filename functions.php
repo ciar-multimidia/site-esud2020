@@ -50,7 +50,9 @@ function ciar_setup() {
     ) );
 
     // gutenberg
-    add_theme_support( 'align-full' );
+    add_theme_support( 'align-wide' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'css/gutenberg.css' );
     add_theme_support( 'disable-custom-colors' );
     add_theme_support(
       'editor-font-sizes',
@@ -63,6 +65,52 @@ function ciar_setup() {
         )
       )
     );
+    add_theme_support(
+      'editor-color-palette',
+      array(
+        array(
+          'name'  => __( 'Marsala', 'site-esud2020-ciar' ),
+          'slug'  => 'rosa',
+          'color' => '#C94A68',
+        ),
+        array(
+          'name'  => __( 'Turquesa', 'site-esud2020-ciar' ),
+          'slug'  => 'turquesa',
+          'color' => '#38A9AD',
+        ),
+        array(
+          'name'  => __( 'Azul', 'site-esud2020-ciar' ),
+          'slug'  => 'azul',
+          'color' => '#54899E',
+        ),
+        array(
+          'name'  => __( 'Azul Marinho', 'site-esud2020-ciar' ),
+          'slug'  => 'azul-marinho',
+          'color' => '#00568B',
+        ),
+        array(
+          'name'  => __( 'Azul Dark', 'site-esud2020-ciar' ),
+          'slug'  => 'azul-escuro',
+          'color' => '#00131E',
+        ),
+        array(
+          'name'  => __( 'Grafite', 'site-esud2020-ciar' ),
+          'slug'  => 'grafite',
+          'color' => '#444',
+        ),
+        array(
+          'name'  => __( 'Cinza', 'site-esud2020-ciar' ),
+          'slug'  => 'cinza',
+          'color' => '#F7F7F7',
+        ),
+        array(
+          'name'  => __( 'Branco', 'site-esud2020-ciar' ),
+          'slug'  => 'branco',
+          'color' => '#FFF',
+        ),
+
+      )
+    ); 
 
 }
 

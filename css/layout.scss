@@ -19,13 +19,19 @@ body {
 	line-height: 1.7;
 	color: $texto;
 	font-family: $fonte-padrao;
-	letter-spacing: 0.04;
 	position: relative;
-	// min-height: 200vh;
+	min-height: 200vh;
 	letter-spacing: 0.09em;
 
 	@media (max-width: $smart-maior) { font-size: 15px; }
 	@media (max-width: $celular) { font-size: 14px; }
+
+	&.bg-rosa { 
+		background: $rosa url('../img/fundo-pgespecial-rosa.png') no-repeat center bottom / 100% auto; 
+		color: white; padding-bottom: 50vh;
+	}
+	&.bg-turquesa {background: $turquesa; color: white;}
+	&.bg-azul {background: $azul-marinho; color: white;}
 }
 
 @import "layout/menu";

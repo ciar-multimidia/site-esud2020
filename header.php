@@ -8,7 +8,8 @@ echo '<head>';
 echo '<meta name="theme-color" content="#00568B" />';	
 get_template_part('inc/metatags');
 echo '</head>';
-echo '<body class="'.join(' ',get_body_class()).'">';
+echo '<body class="'; echo join(' ',get_body_class()); if (get_field('pgespecial')) { echo ' '.get_field('pgespecial'); }
+echo '">';
 
 echo '<main>';
 

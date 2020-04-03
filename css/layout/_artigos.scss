@@ -1,0 +1,19 @@
+#area-conteudo {
+	// p {max-width: $smart-maior;}
+
+	& > *:not(.alignfull):not(.alignwide) {
+		max-width: $smart-maior;
+	}
+
+
+	h2 {
+		margin-bottom: 2em;
+	}
+
+	.lista-programacao {
+		p {margin-bottom: 1rem;}
+	}
+}
+
+
+@import 'blocos';

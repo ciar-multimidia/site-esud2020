@@ -10,8 +10,14 @@
 			margin: 0 auto; display: block; height: 100%; max-height: 200px; text-align: center;
 
 			path {fill: transparentize($rosa,0.8);}
+
+			body.bg-rosa & path {fill: darken($rosa,9%);}
+			body.bg-turquesa & path {fill: darken($turquesa,9%);}
+			body.bg-azul & path {fill: darken($azul-marinho,9%);}
 		}
 	}
+
+
 
 	.area-cabecalho {
 		position: relative; padding: 50px 0 30px;
@@ -38,6 +44,10 @@
 		    .titulo-pagina {
 		    	text-transform: uppercase;
 		    	color: $turquesa;
+
+				body.bg-rosa &,
+		    	body.bg-turquesa &,
+				body.bg-azul & { color: white;}
 		    }
 		}
 	}

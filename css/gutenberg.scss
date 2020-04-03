@@ -1,0 +1,57 @@
+$output-bourbon-deprecation-warnings: false !default;
+@import "padroes/predefinicoes";
+
+body {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 17px;
+	line-height: 1.7;
+	color: $texto;
+	font-family: $fonte-padrao;
+	letter-spacing: 0.04;
+}
+
+// formatacoes
+h1, h2, h3, h4, h5 {
+	text-align: left;
+	a {
+		color: inherit !important;
+		text-decoration:none !important;
+	}
+}
+
+h1, .editor-post-title__block .editor-post-title__input {
+    font-size: 2.1;
+}
+
+strong, b {font-weight: bold}
+i, em {font-style: italic;}
+
+p:before {display: none;}
+
+
+// titulo de post
+.editor-post-title__block .editor-post-title__input {
+	font-weight: bold; color: $turquesa;
+	font-family: $fonte-padrao; text-transform: uppercase;
+	text-align: left; position: relative;
+}
+.editor-post-title__block {
+	position: relative;
+}
+
+
+// blocos de forma geral
+.wp-block {
+	width: 100%; text-align: justify;
+	max-width: $smart-maior !important;
+
+	&[data-align="wide"], &[data-align="full"] {
+		max-width: $tablet !important;
+	    width: inherit; margin-left: 0px;
+	    margin-right: 0px;
+	}
+}
+
+
+@import 'layout/blocos';
