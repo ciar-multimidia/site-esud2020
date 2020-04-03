@@ -331,6 +331,96 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5e871928bc14e": {
+                    "key": "layout_5e871928bc14e",
+                    "name": "inscricoes",
+                    "label": "Inscricoes",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e871928bc14f",
+                            "label": "Título de chamada",
+                            "name": "titulo",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e871928bc151",
+                            "label": "Descrição",
+                            "name": "descricao",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5e871928bc152",
+                            "label": "Botão",
+                            "name": "botao",
+                            "type": "link",
+                            "instructions": "Selecione a URL do botão e seu texto",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e871c0c5bcb4": {
+                    "key": "layout_5e871c0c5bcb4",
+                    "name": "noticias",
+                    "label": "Notícias",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e871c115bcb5",
+                            "label": "",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "<div style=\"text-align:center\">Sessão de notícias ativada!<\/div>",
+                            "new_lines": "",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Adicionar sessão",
@@ -370,5 +460,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1585836623
+    "modified": 1585912909
 }

@@ -43,6 +43,9 @@ if( have_rows('sessoes_home') ) {
 		// ======================================= //
 		if( get_row_layout() == 'cidade' ) {
 			$fundoImagem = get_sub_field('imagens_fundo');
+			$titulo = get_sub_field('titulo');
+			$descricao = get_sub_field('descricao');
+			$botao = get_sub_field('botao');
 
 			echo '<session class="sessao-home" id="a-cidade">';
 
@@ -62,68 +65,82 @@ if( have_rows('sessoes_home') ) {
 
 				echo '<div class="container">';
 					
-					echo '<h1 class="titulo">A cidade</h1>';
+					if($titulo) { echo '<h1 class="titulo">'.$titulo.'</h1>'; }
 
 					echo '<div class="col">';
-						echo '<article>';
-							echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt.</p>';
-							echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt.</p>';
 
-							echo '<ul class="links-importantes">';
-								echo '<li><a href="">Como chegar</a></li>';
-								echo '<li><a href="">Hospedagem</a></li>';
-								echo '<li><a href="">Turismo</a></li>';
-							echo '</ul>';
-						echo '</article>';
+						if ($descricao || $links) { 
+							echo '<article>'; 
+								if($descricao) { echo $descricao; }
 
-						echo '<div class="wrap-link"><a href="#" class="saiba-mais maior branco">Ver programação</a></div>';
+								if( have_rows('links_importantes') ) {
+									echo '<ul class="links-importantes">';
+									while ( have_rows('links_importantes') ) : the_row();
+										$link = get_sub_field('link');
+										echo '<li><a href="'.$link['url'].'" target="'.$link['target'].'">'.$link['title'].'</a></li>';
+									endwhile;
+									echo '</ul>';
+								}
+							echo '</article>';
+						} 
+
+						if ($botao) {
+							echo '<div class="wrap-link"><a href="'.$botao['url'].'" target="'.$botao['target'].'" class="saiba-mais maior branco">'.$botao['title'].'</a></div>';	
+						}
 					echo '</div>';
 
 				echo '</div>';
 			echo '</session>';
 		}
 
+
+
+		// ========================================//
+		// INSCRICOES
+		// ======================================= //
+		if( get_row_layout() == 'inscricoes' ) {
+			$titulo = get_sub_field('titulo');
+			$descricao = get_sub_field('descricao');
+			$botao = get_sub_field('botao');
+
+			echo '<session class="sessao-home container" id="inscricoes">';
+				echo '<div class="col">';
+						if($titulo) { echo '<h1 class="titulo">'.$titulo.'</h1>'; }
+
+						if ($descricao) { 
+							echo '<article>'.$descricao.'</article>';
+						} 
+						if ($botao) {
+							echo '<div class="wrap-link"><a href="'.$botao['url'].'" target="'.$botao['target'].'" class="saiba-mais turquesa">'.$botao['title'].'</a></div>';	
+						}
+				echo '</div>';
+
+			echo '</session>';
+
+		}
+
+
+
+
+		// ========================================//
+		// INSCRICOES
+		// ======================================= //
+		if( get_row_layout() == 'noticias' ) {
+			echo '<session class="sessao-home container" id="noticias">';
+				$pagNoticias = get_permalink(get_option('page_for_posts'));
+
+				echo '<div class="wrap-mais-noticias">';
+					echo '<h1 class="titulo">Notícias</h1>';
+					echo '<a href="'.$pagNoticias.'" class="saiba-mais">ver todas</a>';
+				echo '</div>';
+
+				get_template_part('inc/loop-lista-noticias');
+
+			echo '</session>';
+		}
+
     endwhile;
 }
 
-
-
-
-
-
-
-// ========================================//
-// INSCRICOES
-// ======================================= //
-// echo '<session class="sessao-home container" id="inscricoes">';
-
-
-// 	echo '<div class="col">';
-// 		echo '<article>';
-// 			echo '<h1 class="titulo">Inscrições</h1>';
-// 			echo '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aperiam voluptatem minima ducimus doloribus odit, et optio facilis odio voluptatum id repellat recusandae ad amet beatae suscipit deserunt laborum sunt.</p>';
-// 			echo '<div class="wrap-link"><a href="#" class="saiba-mais turquesa">Quero me inscrever</a></div>';
-// 		echo '</article>';
-// 	echo '</div>';
-
-// echo '</session>';
-
-
-
-
-// ========================================//
-// NOTICIAS
-// ======================================= //
-// echo '<session class="sessao-home container" id="noticias">';
-// 	$pagNoticias = get_permalink(get_option('page_for_posts'));
-
-// 	echo '<div class="wrap-mais-noticias">';
-// 		echo '<h1 class="titulo">Notícias</h1>';
-// 		echo '<a href="'.$pagNoticias.'" class="saiba-mais">ver todas</a>';
-// 	echo '</div>';
-
-// 	get_template_part('inc/loop-lista-noticias');
-
-// echo '</session>';
 
 get_footer();
