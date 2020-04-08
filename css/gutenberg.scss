@@ -9,6 +9,7 @@ body {
 	color: $texto;
 	font-family: $fonte-padrao;
 	letter-spacing: 0.04;
+	overflow-x: hidden;
 }
 
 // formatacoes
@@ -41,6 +42,10 @@ p:before {display: none;}
 }
 
 
+// alinhamentos
+.has-text-align-right {text-align: right !important;}
+.has-text-align-center {text-align: center !important;}
+
 // blocos de forma geral
 .wp-block {
 	width: 100%; text-align: justify;
@@ -53,5 +58,10 @@ p:before {display: none;}
 	}
 }
 
+
+// bloco de midia e texto
+.wp-block[data-type="core/media-text"] {
+	max-width: $tablet !important;
+}
 
 @import 'layout/blocos';

@@ -1,12 +1,87 @@
-.has-background {
+.has-background:not(p) {
 	position: relative;
-}
+	padding: 5em 0 !important;
+	margin-top: 5em;
+	margin-bottom: 5em;
 
-[class$="background-color"] {
-	position: relative;
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+	& + .has-background { margin-top: -5em; }
 
 	& > * {position: relative;}
 
+	&:before {
+		content: ""; position: absolute;
+		width: 100vw; height: 100%;
+		left: 50%; top: 0; @include transform(translateX(-50%));
+	}
+}
+
+// fundos
+.has-rosa-background-color {
+	background: $rosa; color: white;
+	&:before {background: $rosa;}
+}
+.has-turquesa-background-color {
+	background: $turquesa; color: white;
+	&:before {background: $turquesa}
+}
+.has-azul-background-color {
+	background: $azul; color: white;
+	&:before {background: $azul}
+}
+.has-azul-marinho-background-color {
+	background: $azul-marinho; color: white;
+	&:before {background: $azul-marinho;}
+}
+.has-azul-escuro-background-color {
+	background: $azul-escuro; color: white;
+	&:before {background: $azul-escuro;}
+}
+.has-grafite-background-color {
+	background: $texto; color: white;
+	&:before {background: $texto;}
+}
+.has-cinza-background-color {
+	background: $cinza; color: $texto;
+	&:before {background: $cinza;}
+}
+.has-branco-background-color {
+	background: white; color: $texto;
+	&:before {background: white;}
+}
+
+// tons de textos
+.has-rosa-color {color: $rosa !important;}
+.has-turquesa-color {color: $turquesa !important;}
+.has-azul-color {color: $azul !important;}
+.has-azul-marinho-color {color: $azul-marinho !important;}
+.has-azul-escuro-color {color: $azul-escuro !important;}
+.has-grafite-color {color: $texto !important;}
+.has-cinza-color {color: $cinza !important;}
+.has-branco-color {color: white !important;}
+
+// blockquote
+.wp-block-quote {
+	border:0; border-left: 8px solid $turquesa; padding: 0 0 0 1em;
+	font-style: italic;
+
+	div.wp-block-quote__citation, cite {
+		font-size: 0.9em; color: inherit; font-style: italic; margin-top: 1em;
+	}
+}
+
+// divisoria
+.wp-block-separator {
+	display: block; width: 120px;
+	margin: 2em auto; height: 8px;
+    border: 0; padding: 0; 
+    position: relative;
+    overflow: inherit; text-align: center;
+    background: $rosa;
+
+    .has-rosa-background-color &,
+	.has-turquesa-background-color &,
+	.has-azul-background-color &,
+	.has-azul-marinho-background-color &,
+	.has-azul-escuro-background-color &,
+	.has-grafite-background-color & {background: white;}
 }

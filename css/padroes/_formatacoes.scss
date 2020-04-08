@@ -118,16 +118,6 @@ blockquote {
 }
 
 
-// divisoria
-hr {
-	display: block; width: 100%;
-	margin: 2em auto; height: 22px;
-    border: 0; padding: 0;
-    position: relative;
-    overflow: inherit; text-align: center;
-}
-
-
 input, button, textarea {
 	@include appearance(none);
 	border: 0;

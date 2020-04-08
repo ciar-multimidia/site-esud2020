@@ -1,6 +1,6 @@
 
 #rodape-site {
-	background: $rosa; color: white;
+	background: $rosa; color: white; margin-top: 5em;
 	padding-top: 6em; padding-bottom: 4em;
 
 	&:before {content: ''; @include expandefundo; background: $rosa;}
