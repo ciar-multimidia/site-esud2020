@@ -42,6 +42,8 @@ if (empty(get_field('pgespecial'))) {
 	
 }
 
+get_template_part('inc/popups');
+
 echo '</main>';
 wp_footer();
 

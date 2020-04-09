@@ -56,12 +56,65 @@ jQuery(document).ready(function($) {
 
 
 
-  //////////////////////////////////////// SUBIR TOPO
-  var irAoTopo = $('a#toTop');
-  irAoTopo.click(function(){
-    $('html, body').animate({scrollTop:0},1100);
-    return false;
-  }); 
+  //////////////////////////////////////// POP UP RECURSOS
+  var popupTempo = $('#popupTempo'),
+      popupScroll = $('#popupScroll'),
+      popupSaida = $('#popupSaida');
+  // var popupDelay = popupTempo.data('tempo');
+
+  // se eh por tempo
+  if (popupTempo.length > 0 && sessionStorage.getItem('popupTempoAbriu') !== 'true') {
+    setTimeout(function(){
+      $.fancybox.open(popupTempo, {
+        beforeShow: function(){
+          $("body,html").addClass('noscroll');
+        },
+        afterClose: function(){
+          sessionStorage.setItem('popupTempoAbriu','true');
+          $("body,html").removeClass('noscroll');
+        }
+      });
+    },500);
+  }
+
+  // se eh por rolagem
+  if (popupScroll.length > 0 && sessionStorage.getItem('popupScrollAbriu') !== 'true') {
+    var popupScrollJaAbriu = false;
+
+    janela.on("scroll", function () {
+       if ($(this).scrollTop() > 800 && popupScrollJaAbriu === false) {
+          popupScrollJaAbriu = true;
+          $.fancybox.open(popupScroll, {
+            beforeShow: function(){
+              $("body,html").addClass('noscroll');
+            },
+            afterClose: function(){
+              sessionStorage.setItem('popupScrollAbriu','true');
+              $("body,html").removeClass('noscroll');
+            }
+          });
+       } 
+    });
+  }
+
+  // se eh na saida da janela
+  if (popupSaida.length > 0 && sessionStorage.getItem('popupSaidaAbriu') !== 'true') {
+    var popupSaidaJaAbriu = false;
+    $(document).on('mouseleave', function(event) {
+      if (!popupSaidaJaAbriu) {
+        popupSaidaJaAbriu = true;
+        $.fancybox.open(popupSaida, {
+          beforeShow: function(){
+            $("body,html").addClass('noscroll');
+          },
+          afterClose: function(){
+            sessionStorage.setItem('popupSaidaAbriu','true');
+            $("body,html").removeClass('noscroll');
+          }
+        });
+      }
+    });
+  }
 
 });
 

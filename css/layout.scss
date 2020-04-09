@@ -9,7 +9,7 @@ $output-bourbon-deprecation-warnings: false !default;
 /////// LAYOUT
 body, html {
 	overflow-x: hidden;
-	&.noscroll {overflow: hidden;}
+	&.noscroll {overflow-y: hidden;}
 }
 
 body {
@@ -43,3 +43,6 @@ body {
 
 @import "layout/rodape";
 
+.popup {
+	h1 { margin-bottom: .9em; }
+}

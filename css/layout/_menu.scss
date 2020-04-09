@@ -37,12 +37,12 @@
 		}
 	}
 
-	ul {
+	& > ul {
 		margin: 0; 
 
-		li {
+		& > li {
 			display: inline-block;
-			margin: 0;
+			margin: 0; position: relative;
 
 			a {
 				position: relative;
@@ -63,11 +63,68 @@
 
 			}
 
-			&.current_page_item a, &.current-menu-item a, a:hover {
+			&.current_page_item a, &.current-menu-item a, &:hover a, &:focus a {
 				&:before, &:after {
 					width: 100%; opacity: 1;
 				}
 			}
+
+			&:hover, &:focus {
+				& > ul {
+                    left: 50%;
+                    top: calc(100% - 3px);
+                    width: auto;
+                    opacity: 1;
+                }
+			}
+
+			& > ul {
+                margin:0;
+                position: absolute;
+                left: -9999px;
+                @include transform(translateX(-50%));
+                top: 110%;
+                background: white;
+                box-shadow: 1px 1px 1px transparentize(black,0.95);
+                opacity: 0;
+                @include transition(opacity 0.5s ease, top 0.5s ease);
+                z-index: 1000;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    @include transform(translateX(-50%));
+                    display: block;
+                    width: 0;
+                    left: 50%;
+                    border-width: 0 10px 10px;
+                    z-index: 1;
+                    border-color: white transparent;
+                    top: -9px;
+                }
+
+                li {
+                    position: relative;
+                    text-align: center;
+                    white-space: nowrap;
+                    border-top: 1px solid white;
+
+                    &:first-child {border-top: 0}
+
+                    a {
+                        width: auto; color: $texto;
+                        display: inline-block;
+                        padding: 6px 16px;
+                        font-size: 11px; line-height: 1.8;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        font-weight: 500;
+
+                        &:hover {color: $rosa}
+                    }
+                }
+            }
 		}
 	}
 

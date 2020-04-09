@@ -6,6 +6,13 @@
     @include flex-direction(column);
     @include justify-content(flex-start);
 
+    time {
+    	font-size: .9em; font-weight: bold;
+		text-transform: uppercase; color: darken($cinza,40%);
+		@include flex-shrink(0);
+		margin-bottom: 1em; display: block;
+    }
+
 
 	& > *:not(.alignfull):not(.alignwide) {
 		max-width: $smart-maior;

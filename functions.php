@@ -6,6 +6,18 @@
 
 add_action( 'after_setup_theme', 'ciar_setup' );
 function ciar_setup() {
+    if( function_exists('acf_add_options_page') ) {
+      acf_add_options_page(array(
+        'page_title'  => 'Configurações principais',
+        'menu_title'  => 'Popups',
+        'menu_slug'   => 'popups',
+        'capability'  => 'edit_posts',
+        'icon_url'    => 'dashicons-external',
+        // 'position'    => 3,
+        'redirect'    => false
+      ));
+    }
+
 
     // seguranca
     add_filter( 'style_loader_src', 'ciar_scripts_remove_versao', 9999 );

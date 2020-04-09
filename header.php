@@ -29,7 +29,8 @@ echo '<main>';
 
 			echo '<div class="imagem-fundo" style="background-image:url(';
 				$fundo = get_field('fundo_cabecalho');
-				if( $fundo ) {
+
+				if( !empty($fundo) ) {
 									
 					$getRandom = $fundo[ array_rand( $fundo ) ];
 					$imgAleatoria = $getRandom['imagem' ];
@@ -40,6 +41,8 @@ echo '<main>';
 					echo get_template_directory_uri().'/img/fundo-001.png';
 				}
 			echo ');"></div>';
+
+
 
 
 			echo '<div class="container">';

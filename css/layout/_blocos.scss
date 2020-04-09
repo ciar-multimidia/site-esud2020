@@ -8,6 +8,8 @@
 
 	& > * {position: relative;}
 
+	&.last {margin-bottom: 0}
+
 	&:before {
 		content: ""; position: absolute;
 		width: 100vw; height: 100%;
