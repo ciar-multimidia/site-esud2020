@@ -17,7 +17,7 @@ if (empty(get_field('pgespecial'))) {
 
 		/////////// FORMULARIO
 		echo '<h2>Fale conosco</h2>';
-		echo '<p>Retire dúvidas e peça informações pelo nosso endereço <a href="mailto:esud2020@ciar.ufg.br" target="_blank">esud2020@ciar.ufg.br</a> ou no formulário abaixo.</p>';
+		echo '<p>Tire suas dúvidas ou peça informações pelo endereço <a href="mailto:esud2020@ciar.ufg.br" target="_blank">esud2020@ciar.ufg.br</a> ou pelo formulário abaixo.</p>';
 
 		echo do_shortcode('[contact-form-7 id="19"]');
 
@@ -33,8 +33,15 @@ if (empty(get_field('pgespecial'))) {
 			echo '</div>';
 
 			echo '<div class="creditos">';
-				echo '<h1>Desenvolvimento</h1>';
-				echo '<a href="https://producao.ciar.ufg.br" target="_blank"><img src="'.get_template_directory_uri().'/img/marca-publicaciar.png" alt="Publicação Ciar UFG"></a>';
+				echo '<div>';
+					echo '<h1>Desenvolvimento</h1>';
+					echo '<a href="https://producao.ciar.ufg.br" target="_blank"><img src="'.get_template_directory_uri().'/img/marca-publicaciar.png" alt="Publicação Ciar UFG"></a>';
+				echo '</div>';
+
+				echo '<div>';
+					echo '<h1>Suporte</h1>';
+					echo '<p><a href="https://www.ciar.ufg.br/equipes#aba6" target="_blank">Equipe Tecnológico Ciar</a></p>';
+				echo '</div>';
 			echo '</div>';
 		echo '</div>';
 
