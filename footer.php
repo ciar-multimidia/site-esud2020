@@ -2,7 +2,7 @@
 
 if (empty(get_field('pgespecial'))) {
 
-	echo '<footer id="rodape-site" class="container">';
+	echo '<footer id="rodape-site" class="container"'.(is_front_page() ? ' style="margin-top:0"' : '').'>';
 		get_template_part('img/linha2');
 
 		/////////// AREA DE MARCAS

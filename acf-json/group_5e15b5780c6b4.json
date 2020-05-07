@@ -1,6 +1,6 @@
 {
     "key": "group_5e15b5780c6b4",
-    "title": "DCC - Popups",
+    "title": "Popups",
     "fields": [
         {
             "key": "field_5e15b701174bc",
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "collapsed": "field_5e15b724174bd",
-            "min": 1,
+            "min": 0,
             "max": 8,
             "layout": "block",
             "button_label": "Criar novo Popup",
@@ -153,23 +153,6 @@
                     "delay": 0
                 }
             ]
-        },
-        {
-            "key": "field_5e15e8aa65085",
-            "label": "<h1>Como usar botão dentro do editor de texto dos Popups<\/h1>",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "<i class=\"far fa-engine-warning\"><\/i> <strong>Estrutura do shortcode:<\/strong> [botao link=\"http:\/\/linkaqui.com\" nofollow=\"\" abanova=\"\" tamanho=\"\" cor=\"\"]titulo aqui[\/botao]\r\n<i class=\"far fa-engine-warning\"><\/i> Valores padrão: botão de tamanho médio, cor verde.\r\n\r\n<i class=\"fal fa-arrow-to-right\"><\/i> <strong>Para adicionar cor:<\/strong> há as cores <u>laranja<\/u>, <u>azul<\/u> e <u>marrom<\/u>, enquanto a <em>verde é cor padrão<\/em>. É só acrescentar o nome da cor dentro de <strong>cor=\"\"<\/strong>\r\nExemplo: [botao link=\"http:\/\/linkaqui.com\" cor=\"laranja\"]titulo aqui[\/botao]\r\n\r\n<i class=\"fal fa-arrow-to-right\"><\/i> <strong>Para adicionar tamanho:<\/strong> há os tamanhos <u>pequeno<\/u> e <u>grande<\/u>, enquanto o <em>médio é o valor padrão<\/em>. É só acrescentar o nome do tamanho dentro de <strong>tamanho=\"\"<\/strong>\r\nExemplo: [botao link=\"http:\/\/linkaqui.com\" tamanho=\"grande\"]titulo aqui[\/botao]\r\n\r\n<i class=\"fal fa-arrow-to-right\"><\/i> <strong>Para ativar \"nofollow\":<\/strong> deixar como <strong>nofollow=\"1\"<\/strong>\r\nExemplo: [botao link=\"http:\/\/linkaqui.com\" nofollow=\"1\"]titulo aqui[\/botao]\r\n\r\n<i class=\"fal fa-arrow-to-right\"><\/i> <strong>Para ativar aba nova:<\/strong> deixar como <strong>abanova=\"1\"<\/strong>\r\nExemplo: [botao link=\"http:\/\/linkaqui.com\" abanova=\"1\"]titulo aqui[\/botao]",
-            "new_lines": "wpautop",
-            "esc_html": 0
         }
     ],
     "location": [
@@ -189,5 +172,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586436214
+    "modified": 1588770043
 }
