@@ -17,11 +17,13 @@ echo '<main>';
 	echo '<header id="cabecalho" class="'.(is_front_page() ? 'home' : '').'">';
 		get_template_part('img/grafismo1');
 
-		echo '<nav class="container" id="menu" role="navigation">'; 
-			echo '<h1 id="nome-evento"><a href="'.get_bloginfo('url').'">ESUD 2020</a></h1>';
-			echo '<button id="botao-menu" aria-expanded="false">&#9776; Navegação</button>';
-			ciar_menu('primary'); 
-		echo '</nav>';
+		if ( has_nav_menu( 'primary' ) ) {
+			echo '<nav class="container" id="menu" role="navigation">'; 
+				echo '<h1 id="nome-evento"><a href="'.get_bloginfo('url').'">ESUD 2020</a></h1>';
+				echo '<button id="botao-menu" aria-expanded="false">&#9776; Navegação</button>';
+				ciar_menu('primary'); 
+			echo '</nav>';
+		}
 
 
 		echo '<div class="area-cabecalho">';
@@ -48,7 +50,7 @@ echo '<main>';
 			echo '<div class="container">';
 				echo '<div class="marca">';
 					echo '<img src="'.get_template_directory_uri().'/img/marca.svg" alt="Marca do ESUD 2020">';
-					echo '<h1>Caminhos para a educação em rede:<br>Políticas Públicas e Gestão Institucional</h1>';
+					echo '<h1>Docência Online: Cenários e desafios da Educação em Rede</h1>';
 				echo '</div>';
 			echo '</div>';
 			
