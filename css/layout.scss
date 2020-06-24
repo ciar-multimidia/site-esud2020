@@ -46,3 +46,30 @@ body {
 .popup {
 	h1 { margin-bottom: .9em; }
 }
+
+// ========================================//
+// GOOGLE TRADUTOR
+// ========================================// 
+ul#linguas {
+	position: fixed;
+	top: 50%; right: 0;
+	background: $azul-escuro;
+	padding: .5em; border-radius: 6px 0 0 6px;
+	@include transform(translateY(-50%));
+
+	li {
+		display: block;
+		padding: .2em 0;
+
+		a {
+			display: block; font-size: 0;
+			img { width: 20px; vertical-align: bottom}
+		}
+	}
+}
+
+body{ top: 0 !important }
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+#google_translate_element2 {display:none!important;}

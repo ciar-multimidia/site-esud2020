@@ -15,6 +15,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+
   //////////////////////////////////////// FANCYBOX
   var abrirFancybox = $('.abre-modal');
   abrirFancybox.on('click', function(event) {
@@ -117,14 +118,4 @@ jQuery(document).ready(function($) {
   }
 
 });
-
-
-
-
-
-
-
-
-
-
 

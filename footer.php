@@ -49,6 +49,7 @@ if (empty(get_field('pgespecial'))) {
 	
 }
 
+get_template_part('inc/linguas');
 get_template_part('inc/popups');
 
 echo '</main>';

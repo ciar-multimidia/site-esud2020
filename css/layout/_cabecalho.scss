@@ -65,11 +65,21 @@
 
 				.marca {
 					margin: 2em 0;
-					width: 40%; height: auto;
+					width: 50%; height: auto;
+
+					img, svg { margin: 0 auto; max-width: 465px; display: block;  }
 
 					h1 {
 						margin-top: 3rem;
 						font-size: .9em; color: white;
+						text-transform: uppercase;
+						text-align: center; line-height: inherit;
+						font-weight: 500; 
+					}
+
+					h2 {
+						margin-top: 3rem;
+						font-size: 11px; color: white;
 						text-transform: uppercase;
 						text-align: center; line-height: inherit;
 						font-weight: 500; 
@@ -83,7 +93,7 @@
 				.container .marca {
 					width: 100%; padding-top: 3em;
 
-					img { margin: 0 auto; display: block; width: 350px; max-width: 80%;  }
+					img, svg {width: 350px; max-width: 80%;  }
 
 					h1 {font-size: .8em}
 				}
